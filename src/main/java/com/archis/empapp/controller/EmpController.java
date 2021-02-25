@@ -9,17 +9,17 @@ import com.archis.empapp.dto.Employee;
 @RestController
 @RequestMapping("/emp")
 public class EmpController {
-    final static Log logger = LogFactory.getLog(EmpController.class);
+    final static Log log = LogFactory.getLog(EmpController.class);
     @GetMapping(value = "/{id}")
     public String getName(@PathVariable("id") Long id){
 
-        logger.debug("Employee Id from request : " + id);
+        log.debug("Employee Id from request : " + id);
         return "myName";
     }
 
     @PostMapping
     public String create(@RequestBody Employee employee) {
-        logger.debug("Employee name from request : " + employee.getName());
+        log.debug("Employee name from request : " + employee.getName());
 
         return employee.getLocation();
     }
